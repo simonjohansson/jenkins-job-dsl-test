@@ -1,13 +1,23 @@
 node('master') {
   git url: 'https://github.com/simonjohansson/jenkins-job-dsl-test'
-  stage 'Do Something'
-  sh 'ls'
-
-  stage 'Do something else'
+  doSomething
   parallel(sleep60: {
-	       sh "sleep 60"
+	     sleep 60
 	   },
 	   sleep50: {
-	       sh "sleep 50"
+	     sleep 50
 	   })
+  kehe
+}
+
+def doSomething() {
+  echo "I am doing something"
+}
+
+def sleep(n) {
+  sh "sleep ${n}"
+}
+
+def kehe() {
+  sh "ls"
 }
