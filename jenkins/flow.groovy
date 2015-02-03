@@ -5,12 +5,9 @@ node('master') {
 
   stage 'Do something else'
   parallel(sleep60: {
-	     runWithServer {url ->
 	       sh "sleep 60"
-	     }
-	   }, sleep50: {
-	     runWithServer {url ->
+	   },
+	   sleep50: {
 	       sh "sleep 50"
-	     }
 	   })
 }
