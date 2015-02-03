@@ -1,16 +1,17 @@
 node('master') {
   git url: 'https://github.com/simonjohansson/jenkins-job-dsl-test'
-  doSomething 'a'
+
+  doSomething()
   parallel(sleep60: {
 	     sleep "60"
 	   },
 	   sleep50: {
 	     sleep "50"
 	   })
-  kehe 'a'
+  kehe()
 }
 
-def doSomething(a) {
+def doSomething() {
   echo "I am doing something"
 }
 
@@ -19,6 +20,6 @@ def sleep(n) {
   sh "sleep ${n}"
 }
 
-def kehe(a) {
+def kehe() {
   sh "ls"
 }
