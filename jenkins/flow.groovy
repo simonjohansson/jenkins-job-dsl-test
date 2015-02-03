@@ -15,6 +15,7 @@ def doSomething(a) {
 }
 
 def sleep(n) {
+  Echo "Im about to sleep for ${n}"
   sh "sleep ${n}"
 }
 
